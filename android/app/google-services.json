@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "505501066611",
+    "project_id": "kakashi-2bf36",
+    "storage_bucket": "kakashi-2bf36.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:505501066611:android:31385f735f4dc63e1b5106",
+        "android_client_info": {
+          "package_name": "com.example.kakashi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "505501066611-tthu3377jc0vkqla91i9g92m1b342o00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQLG4MjjBFrW2ecYTafwyBGOMtaqRgnDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "505501066611-tthu3377jc0vkqla91i9g92m1b342o00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
