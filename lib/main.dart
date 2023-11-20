@@ -27,6 +27,7 @@ import 'package:kakashi/students/home.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 //code 1
+//code 2
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
