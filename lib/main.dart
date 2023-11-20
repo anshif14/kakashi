@@ -2,6 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:kakashi/API%20INTEGRATION.dart';
+import 'package:kakashi/abu/abu.dart';
+import 'package:kakashi/arabic%20calendar.dart';
 import 'package:kakashi/circle%20graph.dart';
 import 'package:kakashi/guzto%20vendor.dart';
 import 'package:kakashi/guztyMbu.dart';
@@ -17,9 +19,12 @@ import 'package:kakashi/screens/pincode%20Riverpod.dart';
 import 'package:kakashi/screens/postalApiRiverPond.dart';
 import 'package:kakashi/screens/riverpod1.dart';
 import 'package:kakashi/screens/soulknobe%20date.dart';
+import 'package:kakashi/soulknob.dart';
+import 'package:kakashi/soulknob/asas.dart';
 import 'package:kakashi/students/home.dart';
 // import 'package:kakashi/studentAchievements.dart';
 // import 'package:kakashi/studentProfile.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -40,10 +45,36 @@ class _MyAppState extends State<MyApp> {
   var b;
   @override
   Widget build(BuildContext context) {
+
+
+    // localizationsDelegates: [
+    //   GlobalMaterialLocalizations.delegate,
+    //   GlobalWidgetsLocalizations.delegate,
+    //   GlobalCupertinoLocalizations.delegate,
+    // ],
+    // supportedLocales: [
+    // Locale('en'), // English
+    // Locale('es'), // Spanish
+    // ],
     var c;
     return  MaterialApp(
+
+        supportedLocales: [
+            const Locale('en', 'US'), // English
+          const Locale('ar', 'SA'), // Arabic (Saudi Arabia)
+          // Add more locales as needed
+        ],
+        // Specify the initial locale.
+        // locale: Locale('ar', 'US'), // Set to your default locale
+
+        // Add the localization delegates.
+        localizationsDelegates: [
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          // Add other delegates for your custom localization as needed.
+        ],
       debugShowCheckedModeBanner: false,
-      home: doctorSlotBooking(
+      home: checkCalendar(
 
       )
     );

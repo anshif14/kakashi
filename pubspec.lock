@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
+  auto_size_text:
+    dependency: "direct main"
+    description:
+      name: auto_size_text
+      sha256: "3f5261cd3fb5f2a9ab4e2fc3fba84fd9fcaac8821f20a1d4e71f557521b22599"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   boolean_selector:
     dependency: transitive
     description:
@@ -113,6 +121,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.0.4"
+  dotted_line:
+    dependency: "direct main"
+    description:
+      name: dotted_line
+      sha256: c931ba331656154711d9420f369f80cf9e8869ca9933ae5fb35b7669bcbe7d2e
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.2"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -161,6 +185,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.4.0"
+  fl_chart:
+    dependency: "direct main"
+    description:
+      name: fl_chart
+      sha256: "6b9eb2b3017241d05c482c01f668dd05cc909ec9a0114fdd49acd958ff2432fa"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.64.0"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -174,6 +206,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.1"
+  flutter_bs_ad_calendar:
+    dependency: "direct main"
+    description:
+      name: flutter_bs_ad_calendar
+      sha256: "9b820b66c96d8b333476e84206d8ab5b9960fd89daa7fb15ab4f83bd886489e2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.4"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -182,6 +222,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.1"
+  flutter_localizations:
+    dependency: "direct dev"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_riverpod:
     dependency: "direct main"
     description:
@@ -232,6 +277,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.4"
+  hijri:
+    dependency: "direct main"
+    description:
+      name: hijri
+      sha256: "203eb7341e32789af6429877e88411b1526ef44c5d157ce4d3b930dd32c37ef1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.0"
   http:
     dependency: "direct main"
     description:
@@ -256,6 +309,30 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.18.1"
+  jhijri:
+    dependency: "direct main"
+    description:
+      name: jhijri
+      sha256: c2a28e803b1d07513a29953c6685b933235511a1f57966fd5bf66bfdae131f70
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
+  jhijri_picker:
+    dependency: "direct main"
+    description:
+      name: jhijri_picker
+      sha256: "55e3cdc03a20284fea179658c102b8eed802a5cc0e1fd949265285b1d352da8a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
+  jiffy:
+    dependency: "direct main"
+    description:
+      name: jiffy
+      sha256: cc1d4b75016a9156c29b5d61f0c9176c3e0fb0580cc5a0e0422b5d2cab3fbfff
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.2.1"
   js:
     dependency: transitive
     description:
@@ -304,6 +381,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  nepali_utils:
+    dependency: transitive
+    description:
+      name: nepali_utils
+      sha256: "76e896b08270c8f0e9365cf2ce9f8f5cd0fcd47b29d3b4baedef3ce88b7126a2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.3"
   path:
     dependency: transitive
     description:
@@ -388,10 +473,10 @@ packages:
     dependency: transitive
     description:
       name: plugin_platform_interface
-      sha256: "6a2128648c854906c53fa8e33986fc0247a1116122f9534dd20e3ab9e16a32bc"
+      sha256: da3fdfeccc4d4ff2da8f8c556704c08f912542c5fb3cf2233ed75372384a034d
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.4"
+    version: "2.1.6"
   popover:
     dependency: "direct main"
     description:
@@ -472,6 +557,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.1"
+  simple_gesture_detector:
+    dependency: transitive
+    description:
+      name: simple_gesture_detector
+      sha256: "86d08f85f1f58583b7b4b941d989f48ea6ce08c1724a1d10954a277c2ec36592"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -517,6 +610,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  table_calendar:
+    dependency: "direct main"
+    description:
+      name: table_calendar
+      sha256: "1e3521a3e6d3fc7f645a58b135ab663d458ab12504f1ea7f9b4b81d47086c478"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.9"
   term_glyph:
     dependency: transitive
     description:

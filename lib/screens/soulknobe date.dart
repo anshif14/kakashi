@@ -13,6 +13,7 @@ class doctorSlotBooking extends StatefulWidget {
 class _doctorSlotBookingState extends State<doctorSlotBooking> {
   DateTime currentDate = DateTime.now();
 
+
   List<DateTime> monthList = [];
   List daysList = [];
 

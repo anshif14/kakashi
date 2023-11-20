@@ -8,7 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
 import 'package:riverpod/src/framework.dart';
 
-import '../mode;s/name model.dart';
+import '../models/name model.dart';
 
 final nameProvider = StateProvider((ref) async {
 

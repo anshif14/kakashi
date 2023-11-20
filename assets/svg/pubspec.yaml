@@ -1,4 +1,4 @@
-name: kakashi
+name: soulknobe_customer
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.19.0 <3.0.0'
+  sdk: '>=3.0.6 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -35,44 +35,62 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  firebase_core:
-  cloud_firestore:
-  flutter_svg:
-  flutter_advanced_switch: ^3.0.1
-  flutter_switch: ^0.3.2
-  google_fonts:
-  intl:
-  popover: ^0.2.8+2
-  custom_pop_up_menu: ^1.2.4
-  flutter_riverpod:
-  flutter_swipe_button: ^2.1.1+1
-  http:
-  shared_preferences:
-  k_chart:
+  google_fonts: ^5.1.0
+  introduction_screen: ^3.1.11
+  stylish_bottom_bar: ^1.0.3
+  carousel_slider: ^4.2.1
+  smooth_page_indicator: ^1.1.0
+  flutter_otp_text_field: ^1.1.1
+  another_stepper: ^1.2.2
+  syncfusion_flutter_sliders:
+  syncfusion_flutter_core:
+  flutter_svg: ^2.0.5
+  firebase_core: ^2.15.0
+  cloud_firestore: ^4.8.4
+  fpdart: ^0.6.0
+  flutter_riverpod: ^2.3.6
+  firebase_auth: ^4.6.3
+  file_picker: ^4.0.0
+  firebase_storage: ^11.2.5
+  intl: 
+  easy_date_timeline: 
+  intl_phone_field: ^3.2.0
+  flutter_pannable_rating_bar: ^2.7.2+1
+  audioplayers: ^5.1.0
+  fluttertoast: ^8.2.2
+  
+  google_sign_in: ^6.1.4
+  shared_preferences: ^2.2.0
+  chat_bubbles: 
+  simple_polls: ^1.0.8
+  syncfusion_flutter_charts: ^22.2.12
+  image_picker: ^1.0.4
+  pinput: ^3.0.1
+  
+  permission_handler: ^11.0.0
+  flutter_sound: ^9.2.13
+  lottie: ^2.6.0
+  percent_indicator: ^4.2.3
   dashed_circular_progress_bar:
-  fl_chart:
+  dots_indicator:
+  cached_network_image:
+  flutter_polls: ^0.1.5
+  avatar_stack: ^1.2.0
+  easy_stepper: ^0.8.1
+  flutter_rating_bar: ^4.0.1
+  im_stepper:
   dotted_line: ^3.2.2
-  auto_size_text: ^3.0.0
-  hijri: ^3.0.0
-  table_calendar: ^3.0.9
-  flutter_bs_ad_calendar: ^1.0.4
-#  hijri_picker:
-  jhijri:
-  jhijri_picker:
-  jiffy:
-
-#  flutter_localization: ^0.1.14
-#  flutter_locales:
-
-
-
+  slide_countdown: ^0.6.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_localizations:
-    sdk: flutter
+  flutter_launcher_icons: ^0.13.1  
 
+flutter_icons:
+  android: true
+  
+  image_path: "assets/appLogo.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -95,8 +113,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
-    - assets/svg/
-  #   - images/a_dot_burr.jpeg
+    - assets/lottie/
+    - assets/icons/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

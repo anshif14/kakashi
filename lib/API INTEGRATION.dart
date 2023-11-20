@@ -15,37 +15,34 @@ class apiIntegration extends StatefulWidget {
 class _apiIntegrationState extends State<apiIntegration> {
   http.Response? data;
 
-  List details =[];
+  List details = [];
 
   bool loading = false;
 
-  getData(String pin)async{
-
+  getData(String pin) async {
     loading = true;
+    setState(() {});
+
+    data = await http.get(Uri.parse(
+        'https://www.postpincode.in/api/getPostalArea.php?pincode=$pin'));
+
+    print(data!.body);
+
+    details = json.decode(data!.body);
+
+    // api = Api.fromjson(jsonDecode(data!.headers));
     setState(() {
-
+      loading = false;
     });
-
-
-     data = await http.get(Uri.parse('https://www.postpincode.in/api/getPostalArea.php?pincode=$pin'));
-
-     print(data!.body);
-
-     details = json.decode(data!.body);
-
-     // api = Api.fromjson(jsonDecode(data!.headers));
-     setState(() {
-       loading = false;
-     });
     return Api.fromjson(data!.body);
 
     print(data!.statusCode);
-    print(data!.body);setState(() {
-
-    });
+    print(data!.body);
+    setState(() {});
   }
+
   TextEditingController pinController = TextEditingController();
-  Api? api ;
+  Api? api;
 
   @override
   void initState() {
@@ -55,132 +52,104 @@ class _apiIntegrationState extends State<apiIntegration> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-
-
-
       ),
-body: Center(
-  child:   Padding(
-    padding: const EdgeInsets.all(8.0),
-    child: SingleChildScrollView(
-      physics: BouncingScrollPhysics(),
-      child: Column(
-
-
-        children: [
-
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Pincode',
-                suffixIcon: Icon(Icons.search),
-                border: OutlineInputBorder()
-              ),
-              onChanged: (val){
-                getData(val);
-                setState(() {
-
-                });
-
-              },
-              controller: pinController,
-            ),
-          ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        labelText: 'Pincode',
+                        suffixIcon: Icon(Icons.search),
+                        border: OutlineInputBorder()),
+                    onChanged: (val) {
+                      getData(val);
+                      setState(() {});
+                    },
+                    controller: pinController,
+                  ),
+                ),
 // Text(details.toString()),
-loading== true?Center(child: CircularProgressIndicator(),):
-ListView.separated(
-  physics: NeverScrollableScrollPhysics(),
+                loading == true
+                    ? Center(
+                        child: CircularProgressIndicator(),
+                      )
+                    : ListView.separated(
+                        physics: NeverScrollableScrollPhysics(),
+                        separatorBuilder: (context, index) => Divider(
+                              thickness: 5,
+                              color: Colors.black,
+                            ),
+                        shrinkWrap: true,
+                        itemCount: details.length,
+                        itemBuilder: (context, index1) {
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              itemCount: details[index1].keys.toList().length,
+                              itemBuilder: (context, index) {
+                                Map data = details[index1];
 
-  separatorBuilder: (context, index) => Divider(
-      thickness: 5,
-      color: Colors.black,
-  ),
-  shrinkWrap: true,
-  itemCount: details.length,
-  itemBuilder: (context,index1) {
-      return     Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-physics: NeverScrollableScrollPhysics(),
-          shrinkWrap: true,
-
-          itemCount: details[index1].keys.toList().length,
-
-          itemBuilder: (context, index) {
-
-            Map data = details[index1];
-
-          return Row(
-
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-            children: [
-
-              Text(data.keys.toList()[index].toString(),
-
-              style: TextStyle(
-
-                fontSize: 22
-
-              ),),
-
-
-
-              Text(data.values.toList()[index].toString(),
-
-                style: TextStyle(
-
-                    fontSize: 22
-
-                ),),
-
-            ],
-
-          );
-
-        },),
-      );
-  }
-),
+                                return Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      data.keys.toList()[index].toString(),
+                                      style: TextStyle(fontSize: 22),
+                                    ),
+                                    Text(
+                                      data.values.toList()[index].toString(),
+                                      style: TextStyle(fontSize: 22),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ),
+                          );
+                        }),
 
 // Text(api!.toMap().length.toString()),
 //       Text(data!.body.toString()),
-              ElevatedButton(onPressed: (){
-                // for(var docs in details){
-                if(pinController.text.length == 6){
-                  FirebaseFirestore.instance.collection('picodes').doc(pinController.text).set({'data':details});
+                ElevatedButton(
+                    onPressed: () {
+                      // for(var docs in details){
+                      if (pinController.text.length == 6) {
+                        FirebaseFirestore.instance
+                            .collection('picodes')
+                            .doc(pinController.text)
+                            .set({'data': details});
+                      }
 
-                }
-
-
-                // }
-
-
-              }, child: Text('test')),
-        ],
+                      // }
+                    },
+                    child: Text('test')),
+              ],
+            ),
+          ),
+        ),
       ),
-    ),
-  ),
-),
-
     );
   }
 }
 
 //https://dog.ceo/api/breeds/image/random
 
-class Api{
-final String message;
-final String status;
+class Api {
+  final String message;
+  final String status;
 
 //<editor-fold desc="Data Methods">
   const Api({
@@ -228,8 +197,8 @@ final String status;
     );
   }
 
-  String toJson()=> json.encode(toMap());
-  factory Api.fromjson(String source)=> Api.fromMap(jsonDecode(source));
+  String toJson() => json.encode(toMap());
+  factory Api.fromjson(String source) => Api.fromMap(jsonDecode(source));
 
 //</editor-fold>
 }
