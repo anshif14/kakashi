@@ -26,6 +26,8 @@ import 'package:kakashi/students/home.dart';
 // import 'package:kakashi/studentProfile.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+//code 1
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
