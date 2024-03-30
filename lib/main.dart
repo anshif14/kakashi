@@ -5,6 +5,8 @@ import 'package:kakashi/API%20INTEGRATION.dart';
 import 'package:kakashi/abu/abu.dart';
 import 'package:kakashi/arabic%20calendar.dart';
 import 'package:kakashi/circle%20graph.dart';
+import 'package:kakashi/excel/screens/FetchData.dart';
+import 'package:kakashi/firebase_options.dart';
 import 'package:kakashi/guzto%20vendor.dart';
 import 'package:kakashi/guztyMbu.dart';
 import 'package:kakashi/hida.dart';
@@ -25,13 +27,16 @@ import 'package:kakashi/students/home.dart';
 // import 'package:kakashi/studentAchievements.dart';
 // import 'package:kakashi/studentProfile.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:kakashi/usersByOrder.dart';
 
 //code 1
 //code 2
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform
+  );
   runApp(ProviderScope(child: MyApp()));
 }
 var a;
@@ -77,7 +82,7 @@ class _MyAppState extends State<MyApp> {
           // Add other delegates for your custom localization as needed.
         ],
       debugShowCheckedModeBanner: false,
-      home: checkCalendar(
+      home: FetchData(
 
       )
     );

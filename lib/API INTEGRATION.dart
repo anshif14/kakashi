@@ -22,15 +22,8 @@ class _apiIntegrationState extends State<apiIntegration> {
   getData(String pin) async {
     loading = true;
     setState(() {});
-
-    data = await http.get(Uri.parse(
-        'https://www.postpincode.in/api/getPostalArea.php?pincode=$pin'));
-
-    print(data!.body);
-
+    data = await http.get(Uri.parse('https://www.postpincode.in/api/getPostalArea.php?pincode=$pin'));
     details = json.decode(data!.body);
-
-    // api = Api.fromjson(jsonDecode(data!.headers));
     setState(() {
       loading = false;
     });
@@ -65,6 +58,17 @@ class _apiIntegrationState extends State<apiIntegration> {
             physics: BouncingScrollPhysics(),
             child: Column(
               children: [
+
+                // RichText(
+                //
+                //     text: TextSpan(
+                //       children: [
+                //         TextSpan(text: 'asdfgh',style: TextStyle()),
+                //         TextSpan(text: 'asdfgh',style: TextStyle())
+                //       ]
+                //
+                // )),
+                //
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextFormField(

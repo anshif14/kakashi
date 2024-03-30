@@ -1,6 +1,6 @@
 class User{
-  String? name;
-  int? age;
+  String name;
+  int age;
 
   User({
     required this.name,
